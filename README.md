@@ -9,3 +9,8 @@
 
 ## OTHER REQUIREMENTS ##
 The following are required to run this script.
+
+- [Node.js] (https://nodejs.org/en/)
+  - [Google API Client] (https://pypi.org/project/google-api-python-client/)
+- [Python 3](https://www.python.org/downloads/)
+  - [PIP] (https://pip.pypa.io/en/stable/reference/pip_install/) 
