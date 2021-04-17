@@ -7,7 +7,7 @@ import os
 league = 'Divinity'
 
 if league == "Divinity":
-    code = '1IhZo8GQLhibEzL-5u56RRafHO0FMBbpf1fS5h4P45cc'
+    code = ''
     path = f'../{league}/{league}_merged.csv'
 elif league == "Olympian":
     code = ''
