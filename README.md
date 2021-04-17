@@ -25,3 +25,9 @@ The following are required to run this script.
 **scripts/credentials.json** - This document holds all the necessary credentials for [Google OAuth](https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow). See link for specific details on how to handle this. 
 - **scripts/google_write.py** - This document handles where to write the data to. Since TES runs multiple leagues, this document contains multiple leagues (and can easily be expanded). Parameters are passed from **run.sh** for specific league.
 - **scripts/GoogleSheetsAPI.py** - This document handles the token and security credentials for Google OAuth as well as how the data will be written to the Google Sheet.
+
+## ADDITIONAL INFORMATION ##
+- A token.pickle file is required to store Google OAuth security and to access available services.
+
+## CREDITS ##
+Credit to Jetgorilla (https://github.com/broberts2), without his assistance this wouldn't have been possible. 
