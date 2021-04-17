@@ -2,10 +2,12 @@
 
 ## LIST OF FILES ##
 
-- **run.sh** - This is the main file to run in shell. The user must pass 2 arguments when running this file (the week and name of league). For example: ```./run.sh wk1 Divinity```
-- **scripts/codes.js** - This is where tournament codes will be placed. File contains valid tournament codes from Spring 2021 Invitational to utilize (need to be uncommented)
-- **scripts/credentials.json** - Credentials for using Google's oauth to upload documents to Google Sheets. These variables will need to be supplied by the user: ```client_id, project_id, client_secret```
-- **scripts/google_write.py** - This writes to a specific Google Sheet's document (defined by ```code = ```). 
+- **run.sh** - Main shell file to initalize stats process. The user must pass 2 arguments when running this file (the week and name of league). For example: ```./run.sh wk1 Divinity```
+- **scripts/codes.js** - Javascript file where tournament codes will be placed. File contains valid tournament codes from Spring 2021 Invitational to utilize (need to be uncommented in document)
+- **scripts/credentials.json** - Json file to hold credentials for using Google's oauth. These variables will need to be supplied by the user: ```client_id, project_id, client_secret```
+- **scripts/google_write.py** - Python script for writing to a specific Google Sheet's document (defined by ```code = ```)
+- **scripts/GoogleSheetsAPI.py** - Python script for passing credentials to Google oauth (uses token.pickle, more below on this). Variables from **scripts/credentials.json** are passed to this script.
+- **token.pickle** - Token file that gives security access to Google Sheets and contains a list of services that can be utilized.
 
 
 ## REQUIREMENTS ##
@@ -16,6 +18,8 @@ The following are required to run this script.
 - [Python 3](https://www.python.org/downloads/)
 - [PIP](https://pip.pypa.io/en/stable/reference/pip_install/) 
 
-## DETAILED DESCRIPTION ##
-- **run.sh** - This document is the main handler. It calls files from ```scripts/``` as well as handles some of the formatting. The script utilizes simple native shell tools (*awk, cat, paste, tail*) to remove uncessary data, arrange columns in a specific order, and create formulas/columns to manipulate data. 
-- **scripts/google_write.py** - This documents handles where to write the data to. Since TES runs multiple leagues, this document contains multiple leagues (and can easily be expanded). Parameters are passed from **run.sh** for specific league.
+## ADDITIONAL DETAILS ##
+- **run.sh** - This document is the main handler. It calls files from ```scripts/``` as well as handles some of the formatting. The script utilizes simple native shell tools (*awk, cat, paste, tail*) to remove uncessary data, arrange columns in a specific order, and create formulas/columns to manipulate data.
+- **scripts/codes.js** - This document is a container for tournament codes. Tournament codes are generated through [Riot's API](https://developer.riotgames.com/docs/lol) using the user's unique RGAPI key. Specifically for this program, codes should be included on a weekly basis (i.e., all codes for Week X will be placed in this file before running script).
+**scripts/credentials.json** - This document holds all the necessary credentials for [Google OAuth](https://developers.google.com/identity/protocols/oauth2/javascript-implicit-flow). See link for specific details on how to handle this. 
+- **scripts/google_write.py** - This document handles where to write the data to. Since TES runs multiple leagues, this document contains multiple leagues (and can easily be expanded). Parameters are passed from **run.sh** for specific league.
