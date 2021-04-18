@@ -8,7 +8,7 @@
 - **scripts/credentials.json** - Json file to hold credentials for using Google's oauth. These variables will need to be supplied by the user: ```client_id, project_id, client_secret```
 - **scripts/google_write.py** - Python script for writing to a specific Google Sheet's document (defined by ```code = ```)
 - **scripts/GoogleSheetsAPI.py** - Python script for passing credentials to Google oauth (uses token.pickle, more below on this). Variables from **scripts/credentials.json** are passed to this script.
-- **scripts/positions.csv** Excel sheet that contains an ordered list of positions in League of Legends. This is a quick fix to Riot API listing both support and ADC as 'bottom lane' players as well as other issues where correct player positions were not recognized. 
+- **scripts/positions.csv** - Excel sheet that contains an ordered list of positions in League of Legends. This is a quick fix to Riot API listing both support and ADC as 'bottom lane' players as well as other issues where correct player positions were not recognized. 
 
 ## REQUIREMENTS ##
 The following are required to run this script.
